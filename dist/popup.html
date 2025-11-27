@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { width: 400px; font-family: Arial; padding: 0; margin: 0; }
+    .container { padding: 20px; }
+    h1 { color: #333; font-size: 20px; }
+    input, textarea, select { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+    button { width: 100%; padding: 12px; background: #667eea; color: white; border: none; border-radius: 5px; cursor: pointer; margin-bottom: 20px; }
+    .profiles-list { margin-top: 20px; border-top: 1px solid #ddd; padding-top: 15px; }
+    .profile-item { background: #f5f5f5; padding: 10px; margin: 10px 0; border-radius: 5px; }
+    .profile-item p { margin: 5px 0; font-size: 12px; }
+    .delete-btn { background: #e74c3c; padding: 5px 10px; border: none; color: white; border-radius: 3px; cursor: pointer; font-size: 11px; width: auto; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Form Autofill AI</h1>
+    
+    <h3>Create Profile</h3>
+    <input type="text" id="name" placeholder="Full Name">
+    <input type="email" id="email" placeholder="Email">
+    <input type="tel" id="phone" placeholder="Phone">
+    <textarea id="address" placeholder="Address"></textarea>
+    <button id="saveBtn">Save Profile</button>
+    
+    <div class="profiles-list">
+      <h3>Saved Profiles</h3>
+      <select id="profileSelect">
+        <option value="">-- Select Profile --</option>
+      </select>
+      <div id="profilesList"></div>
+    </div>
+  </div>
+  <div class="ai-helper">
+  <h3>AI Form Helper</h3>
+  <textarea id="questionInput" placeholder="Paste the form question here..."></textarea>
+  <button id="suggestBtn">Get AI Suggestion</button>
+  <div id="suggestionBox" style="display:none; background: #e8f4f8; padding: 10px; margin-top: 10px; border-radius: 5px;">
+    <p><strong>AI Suggestion:</strong></p>
+    <p id="suggestionText"></p>
+    <button id="copySuggestion" style="width: auto; margin-right: 5px;">Copy</button>
+    <button id="regenerate" style="width: auto;">Regenerate</button>
+  </div>
+</div>
+  <script src="db.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
